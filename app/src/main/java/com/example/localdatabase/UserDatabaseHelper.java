@@ -2,16 +2,17 @@ package com.example.localdatabase;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 
 public class UserDatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "users.db";
-    public static final String TABLE_NAME = "users_table";
-
+    public static final String TABLE_NAME = "users";
     public static final String _ID= "ID";
     public static final String COLUMN_NAME = "NAME";
     public static final String COLUMN_AGE = "AGE";
@@ -62,6 +63,12 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         }else{
             return true;
         }
+    }
+
+    public Cursor showData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        return data;
     }
 
 }
