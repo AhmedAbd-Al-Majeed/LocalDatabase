@@ -6,131 +6,197 @@
     android:orientation="vertical"
     tools:context="com.example.localdatabase.MainActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/new_user_phrase"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:textStyle="italic"
+        android:textColor="@color/Black_opaque"
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
         >
 
         <TextView
             android:id="@+id/name_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="@string/name_text_view"
             android:gravity="center_horizontal"
+            android:textColor="@color/Black_opaque"
             />
 
         <EditText
             android:id="@+id/name_et"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="32dp" />
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
         >
 
         <TextView
             android:id="@+id/age_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="AGE"
+            android:text="@string/age_text_view"
+            android:textColor="@color/Black_opaque"
             android:gravity="center_horizontal"
             />
 
         <EditText
             android:id="@+id/age_et"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="32dp"/>
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
         >
 
         <TextView
             android:id="@+id/job_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Job Title"
+            android:text="@string/job_title_text_view"
             android:gravity="center_horizontal"
+            android:textColor="@color/Black_opaque"
             />
 
         <EditText
             android:id="@+id/job_title_et"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="32dp"
+            />
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
         >
 
         <TextView
             android:id="@+id/gender_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gender"
+            android:text="@string/gender_text_view"
             android:gravity="center_horizontal"
+            android:textColor="@color/Black_opaque"
             />
 
         <EditText
             android:id="@+id/gender_et"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="32dp"
+            />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
         >
 
         <TextView
             android:id="@+id/id_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ID"
+            android:text="@string/id_text_view"
+            android:textColor="@color/Black_opaque"
             android:gravity="center_horizontal"
             />
 
         <EditText
             android:id="@+id/id_et"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="@string/edit_text_hint_phrase"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="32dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_gravity="center"
+        >
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/insert_data_button"
+            android:id="@+id/btnAddData"
+            />
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/view_data_button"
+            android:id="@+id/btnViewData"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/update_data_button"
+            android:id="@+id/btnUpdateData"
+            />
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/delete_user_button"
+            android:id="@+id/btnDelete"
+            />
     </LinearLayout>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Add Data"
-        android:id="@+id/btnAddData"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ViewData"
-        android:id="@+id/btnViewData"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Update Data"
-        android:id="@+id/btnUpdateData"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Delete"
-        android:id="@+id/btnDelete"
+        android:text="@string/delete_all_data_button"
+        android:layout_gravity="center"
+        android:id="@+id/btnDeleteALL"
         />
 </LinearLayout>

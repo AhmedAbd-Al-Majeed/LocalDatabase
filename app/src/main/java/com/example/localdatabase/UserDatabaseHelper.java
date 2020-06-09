@@ -71,4 +71,29 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
+    public boolean updateData(String id, String name,String age, String jobTitle, String gender){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(_ID,id);
+        contentValues.put(COLUMN_NAME,name);
+        contentValues.put(COLUMN_AGE,age);
+        contentValues.put(COLUMN_JOBTITLE,jobTitle);
+        contentValues.put(COLUMN_GENDER,gender);
+        db.update(TABLE_NAME, contentValues, "ID = ?", new String[] {id});
+        return true;
+    }
+
+    public Integer deleteData(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME, "ID = ?", new String[] {id});
+    }
+
+    public void deleteAll()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+         db.delete(TABLE_NAME,null,null);
+        db.execSQL("delete FROM "+ TABLE_NAME);
+        db.close();
+    }
+
 }

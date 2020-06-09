@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     UserDatabaseHelper userDb;
 
-    Button btnAddData, btnViewData,btnUpdateData,btnDelete;
+    Button btnAddData, btnViewData,btnUpdateData,btnDelete,btnDeleteAll;
     EditText nameEt,ageEt,jobTitleEt,genderEt, idEt;
 
     @Override
@@ -32,10 +32,15 @@ public class MainActivity extends AppCompatActivity {
 
         btnAddData = (Button) findViewById(R.id.btnAddData);
         btnViewData= (Button) findViewById(R.id.btnViewData);
+        btnUpdateData= (Button) findViewById(R.id.btnUpdateData);
+        btnDelete= (Button) findViewById(R.id.btnDelete);
+        btnDeleteAll= (Button) findViewById(R.id.btnDeleteALL);
 
         AddData();
         ViewData();
-
+        UpdateData();
+        DeleteData();
+        deleteAllData();
     }
 
     public void AddData() {
@@ -87,6 +92,60 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle(title);
         builder.setMessage(message);
         builder.show();
+    }
+
+    public void UpdateData(){
+        btnUpdateData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int temp = idEt.getText().toString().length();
+                if (temp > 0) {
+                    boolean update = userDb.updateData(idEt.getText().toString(), nameEt.getText().toString(),
+                            ageEt.getText().toString(), jobTitleEt.getText().toString(),genderEt.getText().toString());
+                    // if update == true
+                    if (update) {
+                        Toast.makeText(MainActivity.this, "Successfully Updated Data!", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(MainActivity.this, "Something Went Wrong :(.", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    Toast.makeText(MainActivity.this, "You Must Enter An ID to Update :(.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+    public void DeleteData(){
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int temp = idEt.getText().toString().length();
+                if(temp > 0){
+                    Integer deleteRow = userDb.deleteData(idEt.getText().toString());
+                    if(deleteRow > 0){
+                        Toast.makeText(MainActivity.this, "Successfully Deleted The Data!", Toast.LENGTH_LONG).show();
+                    }else{
+                        Toast.makeText(MainActivity.this, "Something went wrong :(.", Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toast.makeText(MainActivity.this, "You Must Enter An ID to Delete :(.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+
+    public void deleteAllData(){
+        btnDeleteAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int temp = idEt.getText().toString().length();
+                userDb.deleteAll();
+                if(temp == 0){
+                    Toast.makeText(MainActivity.this, "Successfully Deleted All Data!", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(MainActivity.this, "Failed to Delete all data", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 }
 

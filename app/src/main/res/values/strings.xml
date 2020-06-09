@@ -1,3 +1,28 @@
 <resources>
+    <!-- Name for the application  -->
     <string name="app_name">LocalDatabase</string>
+    <!-- textView for the user's hint -->
+    <string name="new_user_phrase">Please Enter A new User</string>
+    <!-- textView for the name field [CHAR LIMIT=20] -->
+    <string name="name_text_view">Name</string>
+    <!-- textView for the age field [CHAR LIMIT=20] -->
+    <string name="age_text_view">Age</string>
+    <!-- textView for the job title field -->
+    <string name="job_title_text_view">Job Title</string>
+    <!-- textView for the gender field -->
+    <string name="gender_text_view">Gender</string>
+    <!-- textView for the id field -->
+    <string name="id_text_view">ID</string>
+    <!-- text for the Insert Data button  -->
+    <string name="insert_data_button">Insert Data</string>
+    <!-- text for the view Data button  -->
+    <string name="view_data_button">View Data</string>
+    <!-- text for the update Data button  -->
+    <string name="update_data_button">Update Data</string>
+    <!-- text for the delete Data button  -->
+    <string name="delete_user_button">Delete user</string>
+    <!-- text for the delete all data button  -->
+    <string name="delete_all_data_button">Delete ALL DATA</string>
+    <!-- text for the hint field -->
+    <string name="edit_text_hint_phrase">Used To update or delete users</string>
 </resources>
