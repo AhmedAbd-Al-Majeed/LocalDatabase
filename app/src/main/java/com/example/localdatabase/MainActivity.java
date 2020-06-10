@@ -3,6 +3,7 @@ package com.example.localdatabase;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     UserDatabaseHelper userDb;
 
-    Button btnAddData, btnViewData,btnUpdateData,btnDelete,btnDeleteAll;
+    Button btnAddData, btnViewData,btnUpdateData,btnDelete,btnDeleteAll,btnListAll;
     EditText nameEt,ageEt,jobTitleEt,genderEt, idEt;
 
     @Override
@@ -35,6 +36,17 @@ public class MainActivity extends AppCompatActivity {
         btnUpdateData= (Button) findViewById(R.id.btnUpdateData);
         btnDelete= (Button) findViewById(R.id.btnDelete);
         btnDeleteAll= (Button) findViewById(R.id.btnDeleteALL);
+        btnListAll= (Button) findViewById(R.id.btnListAll);
+
+        btnListAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ListUsers.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         AddData();
         ViewData();
@@ -42,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         DeleteData();
         deleteAllData();
     }
+
+
 
     public void AddData() {
         btnAddData.setOnClickListener(new View.OnClickListener() {
