@@ -9,6 +9,8 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+
 public class UserDatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "users.db";
@@ -96,6 +98,23 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public ArrayList<User> getAllData(){
 
+        ArrayList<User> arrayList= new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        while (cursor.moveToNext()){
+            int id = cursor.getInt(0);
+            String name = cursor.getString(1);
+            String age = cursor.getString(2);
+            String jobTitle = cursor.getString(3);
+            String gender = cursor.getString(4);
+
+            User user = new User(id, name, age, jobTitle, gender);
+            arrayList.add(user);
+        }
+        return arrayList;
+    }
 
 }

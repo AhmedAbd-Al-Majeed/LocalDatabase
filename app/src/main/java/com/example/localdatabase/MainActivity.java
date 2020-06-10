@@ -9,7 +9,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,10 +21,17 @@ public class MainActivity extends AppCompatActivity {
     Button btnAddData, btnViewData,btnUpdateData,btnDelete,btnDeleteAll,btnListAll;
     EditText nameEt,ageEt,jobTitleEt,genderEt, idEt;
 
+    //ListView l1;
+    //ArrayList<User> arrayList;
+    //UserAdapter userAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //arrayList= new ArrayList<>();
+        //l1 = (ListView)findViewById(R.id.list);
 
         userDb = new UserDatabaseHelper(this);
 
@@ -38,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         btnDeleteAll= (Button) findViewById(R.id.btnDeleteALL);
         btnListAll= (Button) findViewById(R.id.btnListAll);
 
+
+
         btnListAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         UpdateData();
         DeleteData();
         deleteAllData();
+
     }
 
 
@@ -161,6 +174,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
 
 
