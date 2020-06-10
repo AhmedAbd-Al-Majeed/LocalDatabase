@@ -21,17 +21,12 @@ public class MainActivity extends AppCompatActivity {
     Button btnAddData, btnViewData,btnUpdateData,btnDelete,btnDeleteAll,btnListAll;
     EditText nameEt,ageEt,jobTitleEt,genderEt, idEt;
 
-    //ListView l1;
-    //ArrayList<User> arrayList;
-    //UserAdapter userAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //arrayList= new ArrayList<>();
-        //l1 = (ListView)findViewById(R.id.list);
 
         userDb = new UserDatabaseHelper(this);
 
@@ -57,8 +52,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
 
         AddData();
         ViewData();
@@ -174,8 +167,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
 }
 
 

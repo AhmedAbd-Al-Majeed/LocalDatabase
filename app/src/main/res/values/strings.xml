@@ -22,7 +22,7 @@
     <!-- text for the delete Data button  -->
     <string name="delete_user_button">Delete user</string>
     <!-- text for the delete all data button  -->
-    <string name="delete_all_data_button">Delete ALL DATA</string>
+    <string name="delete_all_data_button">Delete ALL</string>
     <!-- text for the hint field -->
-    <string name="edit_text_hint_phrase">Used To update or delete users</string>
+    <string name="edit_text_hint_phrase">Use to update or delete users</string>
 </resources>

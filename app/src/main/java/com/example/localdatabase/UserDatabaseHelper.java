@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -23,6 +24,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
 
 
 
+
     public UserDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
@@ -33,13 +35,14 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         // Create a String that contains the SQL statement to create the users table
         String SQL_CREATE_USER_TABLE =  "CREATE TABLE " + TABLE_NAME + " ("
                 + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + COLUMN_NAME + " TEXT, "
+                + COLUMN_NAME + " TEXT NOT NULL , "
                 + COLUMN_AGE + " INTEGER , "
                 + COLUMN_JOBTITLE + " TEXT , "
                 + COLUMN_GENDER + " TEXT );";
 
         // Execute the SQL statement
         db.execSQL(SQL_CREATE_USER_TABLE);
+
 
     }
 
@@ -110,9 +113,12 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
             String age = cursor.getString(2);
             String jobTitle = cursor.getString(3);
             String gender = cursor.getString(4);
-
             User user = new User(id, name, age, jobTitle, gender);
-            arrayList.add(user);
+            if (name == null) {
+                throw new IllegalArgumentException("Pet requires a name");
+            }else {
+                arrayList.add(user);
+            }
         }
         return arrayList;
     }

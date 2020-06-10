@@ -7,7 +7,7 @@
 
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     >
 
@@ -43,9 +43,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
+            android:hint="Name"
             android:layout_marginRight="32dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="32dp" />
+            android:layout_marginEnd="32dp"
+            />
 
     </LinearLayout>
     <LinearLayout
@@ -70,6 +72,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
+            android:inputType="number"
+            android:hint="Age"
             android:layout_marginRight="32dp"/>
 
     </LinearLayout>
@@ -95,6 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
+            android:hint="Job Title"
             android:layout_marginRight="32dp"
             />
 
@@ -121,6 +126,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
+            android:hint="Gender"
             android:layout_marginRight="32dp"
             />
     </LinearLayout>
@@ -148,9 +154,10 @@
             android:layout_height="wrap_content"
             android:hint="@string/edit_text_hint_phrase"
             android:layout_marginLeft="16dp"
-            android:layout_marginRight="32dp"/>
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="50dp"
+             />
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -161,18 +168,18 @@
         >
 
         <Button
-            android:layout_width="120dp"
+            android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
             android:text="@string/insert_data_button"
             android:id="@+id/btnAddData"
             />
-
         <Button
-            android:layout_width="120dp"
+            android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
-            android:text="@string/view_data_button"
-            android:id="@+id/btnViewData"
+            android:text="@string/update_data_button"
+            android:id="@+id/btnUpdateData"
             />
+
     </LinearLayout>
 
     <LinearLayout
@@ -183,33 +190,43 @@
         >
 
         <Button
-            android:layout_width="120dp"
+            android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
-            android:text="@string/update_data_button"
-            android:id="@+id/btnUpdateData"
+            android:text="@string/view_data_button"
+            android:id="@+id/btnViewData"
             />
 
         <Button
-            android:layout_width="120dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+            android:text="View List"
+            android:layout_gravity="center"
+            android:id="@+id/btnListAll"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+
+        <Button
+            android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
             android:text="@string/delete_user_button"
             android:id="@+id/btnDelete"
             />
+
+        <Button
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+            android:text="@string/delete_all_data_button"
+            android:layout_gravity="center"
+            android:id="@+id/btnDeleteALL"
+            />
     </LinearLayout>
 
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="@string/delete_all_data_button"
-        android:layout_gravity="center"
-        android:id="@+id/btnDeleteALL"
-        />
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="ViewList"
-        android:layout_gravity="center"
-        android:id="@+id/btnListAll"
-        />
 </LinearLayout>
 </ScrollView>
